@@ -8,8 +8,7 @@ import com.example.springHibernate.repository.StudentRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
-import javax.imageio.spi.ServiceRegistry;
-import java.util.List;
+ import java.util.List;
 
 
 @Service
@@ -43,6 +42,8 @@ public class StudentService {
     @Transactional
      public Student update(Student student , long id){
         Student updatedStudent=studentRepository.getStudentById(id);
+
+
         updatedStudent.setName(student.getName());
         updatedStudent.setAge(student.getAge());
         updatedStudent.setEmail(student.getEmail());
